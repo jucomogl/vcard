@@ -19,6 +19,26 @@
             min-height: 100vh;
             background-color: #6B93D6;
             margin: 0;
+            position: relative;
+        }
+
+        .language-selector {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .language-selector img {
+            width: 30px;
+            height: 20px;
+            margin-left: 10px;
+            cursor: pointer;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .language-selector img:hover {
+            border-color: #4579C5;
         }
 
         .profile-card {
@@ -140,11 +160,18 @@
     </style>
 </head>
 <body>
+    <div class="language-selector">
+        <img src="pl.png" alt="Polish" onclick="changeLanguage('pl')">
+        <img src="en.png" alt="English" onclick="changeLanguage('en')">
+        <img src="ge.png" alt="German" onclick="changeLanguage('ge')">
+        <img src="fr.png" alt="French" onclick="changeLanguage('fr')">
+    </div>
+
     <div class="profile-card">
         <div class="profile-header">
             <img src="profile.jpg" alt="Profile Picture" class="profile-picture">
-            <h1>Grzegorz Juzwiszyn</h1>
-            <button class="add-to-contacts"><a href="Grzegorz.vcf">+ Add to contacts</a></button>
+            <h1 id="profile-name">Grzegorz Juzwiszyn</h1>
+            <button class="add-to-contacts" id="add-to-contacts">+ Add to contacts</button>
         </div>
 
         <!-- Tab Navigation -->
@@ -158,30 +185,18 @@
         <div class="info-section active" id="contact">
             <div class="info-item">
                 <i class="icon">📞</i>
-                <span>Phone number</span>
+                <span id="phone-label">Phone number</span>
                 <a href="tel:+48792323050">+48792323050</a>
             </div>
             <div class="info-item">
                 <i class="icon">📞</i>
-                <span>Alternative phone number</span>
+                <span id="alt-phone-label">Alternative phone number</span>
                 <a href="tel:+48791942592">+48791942592</a>
             </div>
             <div class="info-item">
                 <i class="icon">✉️</i>
-                <span>Email</span>
+                <span id="email-label">Email</span>
                 <a href="mailto:grzegorz.juzwiszyn@jucom.pl">grzegorz.juzwiszyn@jucom.pl</a>
-            </div>
-            <div class="info-item">
-                <i class="icon">🌐</i>
-                <span>Personal website</span>
-                <a href="https://resume.jucom.pl">resume.jucom.pl</a>
-            </div>
-            <div class="info-item">
-                <i class="icon">📍</i>
-                <span>Location</span>
-                <a href="https://maps.google.com?q=40+Australijska,+54-405,+Wroclaw,+Poland">
-                    40 Australijska, 54-405, Wroclaw, Poland
-                </a>
             </div>
         </div>
 
@@ -189,38 +204,72 @@
         <div class="info-section" id="company">
             <div class="info-item">
                 <i class="icon">🏢</i>
-                <span>Company</span>
-                <p>JUCOM IT Security</p>
-            </div>
-            <div class="info-item">
-                <i class="icon">💼</i>
-                <span>Profession</span>
-                <p>IT Program Manager</p>
+                <span id="company-label">Company</span>
+                <p id="company-name">JUCOM IT Security</p>
             </div>
         </div>
 
         <!-- Socials Section -->
         <div class="info-section" id="socials">
-            <div class="mui-style-1kqu8pd eqgqvk20"><div class="mui-style-hkncyi eqgqvk21"><a target="_blank" rel="nofollow ugc" href="https://www.instagram.com/jucomogl/" class="mui-style-1df703 eqgqvk22"><svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="19.995" cy="19.995" r="16.665" fill="url(#id5)"></circle><path d="M20 24.846A4.852 4.852 0 0 1 15.154 20 4.852 4.852 0 0 1 20 15.154 4.852 4.852 0 0 1 24.846 20 4.852 4.852 0 0 1 20 24.846Zm0-8.308A3.465 3.465 0 0 0 16.538 20 3.465 3.465 0 0 0 20 23.462 3.465 3.465 0 0 0 23.462 20 3.466 3.466 0 0 0 20 16.538ZM25.192 15.847a1.038 1.038 0 1 0 0-2.077 1.038 1.038 0 0 0 0 2.077Z" fill="#fff"></path><path d="M24.154 29h-8.308A4.852 4.852 0 0 1 11 24.154v-8.308A4.852 4.852 0 0 1 15.846 11h8.308A4.852 4.852 0 0 1 29 15.846v8.308A4.852 4.852 0 0 1 24.154 29Zm-8.308-16.615a3.466 3.466 0 0 0-3.461 3.461v8.308a3.466 3.466 0 0 0 3.461 3.461h8.308a3.466 3.466 0 0 0 3.461-3.461v-8.308a3.466 3.466 0 0 0-3.461-3.461h-8.308Z" fill="#fff"></path><defs><radialGradient id="id5" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(15.72 36.684) scale(41.5471)"><stop stop-color="#FD5"></stop><stop offset=".328" stop-color="#FF543F"></stop><stop offset=".348" stop-color="#FC5245"></stop><stop offset=".504" stop-color="#E64771"></stop><stop offset=".643" stop-color="#D53E91"></stop><stop offset=".761" stop-color="#CC39A4"></stop><stop offset=".841" stop-color="#C837AB"></stop></radialGradient></defs></svg></a><a target="_blank" rel="nofollow ugc" href="https://www.facebook.com/grzegorz.judontcare" class="mui-style-1df703 eqgqvk22"><svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 4.17a15.83 15.83 0 1 0 0 31.66 15.83 15.83 0 0 0 0-31.66Z" fill="#039BE5"></path><path d="M22.14 24.2h4.1l.64-4.17h-4.74v-2.27c0-1.73.57-3.26 2.18-3.26h2.6v-3.64c-.45-.06-1.42-.2-3.24-.2-3.81 0-6.05 2.02-6.05 6.6v2.77h-3.92v4.17h3.92v11.44c.78.11 1.56.2 2.37.2.73 0 1.44-.07 2.14-.17V24.2Z" fill="#fff"></path></svg></a><a target="_blank" rel="nofollow ugc" href="https://www.linkedin.com/in/grzegorz-juzwiszyn-99b94015/" class="mui-style-1df703 eqgqvk22"><svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 3.33a16.67 16.67 0 1 0 0 33.34 16.67 16.67 0 0 0 0-33.34Z" fill="#0288D1"></path><path d="M11.67 15.83H15v12.5h-3.33v-12.5Zm1.65-1.66h-.02c-.99 0-1.63-.74-1.63-1.67 0-.95.66-1.67 1.67-1.67 1.02 0 1.64.72 1.66 1.67a1.6 1.6 0 0 1-1.68 1.67Zm15.85 6.25a4.58 4.58 0 0 0-8.34-2.63v-1.96H17.5v12.5h3.33v-6.66a2.5 2.5 0 1 1 5 0v6.66h3.34v-7.91Z" fill="#fff"></path></svg></a></div><div class="mui-style-hkncyi eqgqvk21"><a target="_blank" rel="nofollow ugc" href="https://t.me/Iam7uc0m_hxr" class="mui-style-1df703 eqgqvk22"><svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 3.33a16.67 16.67 0 1 0 0 33.34 16.67 16.67 0 0 0 0-33.34Z" fill="#29B6F6"></path><path d="m27.96 12.75-2.8 14.34s-.13.66-.94.66c-.43 0-.66-.2-.66-.2l-6.08-5.06L14.5 21l-3.82-1.01s-.68-.2-.68-.76c0-.47.7-.7.7-.7l15.99-6.34s.48-.18.84-.18c.22 0 .47.1.47.38 0 .18-.04.37-.04.37Z" fill="#fff"></path><path d="m19.75 24.38-2.57 2.53s-.11.09-.26.09c-.05 0-.1 0-.16-.03l.72-4.48 2.27 1.89Z" fill="#B0BEC5"></path><path d="M24.92 15.15a.38.38 0 0 0-.52-.07L14.5 21s1.58 4.42 1.82 5.18c.24.77.44.79.44.79l.72-4.48 7.37-6.82c.17-.12.2-.36.07-.52Z" fill="#CFD8DC"></path></svg></a><a target="_blank" rel="nofollow ugc" href="https://api.whatsapp.com/send/?phone=48792323050" class="mui-style-1df703 eqgqvk22"><svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="16.66" fill="#40C351"></circle><path fill-rule="evenodd" clip-rule="evenodd" d="m10.5 29.5 1.33-4.88a9.43 9.43 0 1 1 17.59-4.7 9.41 9.41 0 0 1-13.93 8.27l-5 1.31Z" fill="#fff"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M10.5 29.75a.25.25 0 0 1-.24-.31l1.3-4.78a9.67 9.67 0 1 1 3.9 3.8l-4.9 1.28-.06.01Z" fill="#fff"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M25.54 14.38a7.84 7.84 0 0 0-12.17 9.7l.18.3-.8 2.89 2.97-.78.29.17a7.84 7.84 0 0 0 9.53-12.28Z" fill="#40C351"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M17.64 15.98c-.17-.4-.36-.4-.53-.41h-.45a.87.87 0 0 0-.63.29c-.21.23-.82.8-.82 1.96s.84 2.28.96 2.44c.12.15 1.63 2.6 4.02 3.55 1.99.78 2.4.63 2.83.59.43-.04 1.39-.57 1.59-1.12.2-.55.2-1.02.13-1.12-.06-.1-.21-.16-.45-.27a38.4 38.4 0 0 0-1.6-.77c-.22-.08-.38-.12-.54.12-.15.23-.6.76-.74.92-.14.16-.28.18-.51.06-.24-.12-1-.37-1.9-1.17a7.1 7.1 0 0 1-1.3-1.63c-.14-.23-.02-.36.1-.48.1-.1.23-.27.35-.41.12-.14.16-.24.24-.4.08-.15.04-.29-.02-.4-.06-.12-.52-1.29-.73-1.75Z" fill="#fff"></path></svg></a></div></div>
+            <a href="#" target="_blank"><img src="instagram.png" alt="Instagram" class="social-icon"></a>
         </div>
     </div>
 
     <script>
+        const translations = {
+            en: {
+                profileName: "Grzegorz Juzwiszyn",
+                addToContacts: "+ Add to contacts",
+                phoneLabel: "Phone number",
+                altPhoneLabel: "Alternative phone number",
+                emailLabel: "Email",
+                companyLabel: "Company",
+                companyName: "JUCOM IT Security"
+            },
+            pl: {
+                profileName: "Grzegorz Juzwiszyn",
+                addToContacts: "+ Dodaj do kontaktów",
+                phoneLabel: "Numer telefonu",
+                altPhoneLabel: "Alternatywny numer telefonu",
+                emailLabel: "Email",
+                companyLabel: "Firma",
+                companyName: "JUCOM IT Bezpieczeństwo"
+            },
+            ge: {
+                profileName: "Grzegorz Juzwiszyn",
+                addToContacts: "+ Kontakte hinzufügen",
+                phoneLabel: "Telefonnummer",
+                altPhoneLabel: "Alternative Telefonnummer",
+                emailLabel: "E-Mail",
+                companyLabel: "Unternehmen",
+                companyName: "JUCOM IT Sicherheit"
+            },
+            fr: {
+                profileName: "Grzegorz Juzwiszyn",
+                addToContacts: "+ Ajouter aux contacts",
+                phoneLabel: "Numéro de téléphone",
+                altPhoneLabel: "Numéro de téléphone alternatif",
+                emailLabel: "E-mail",
+                companyLabel: "Entreprise",
+                companyName: "JUCOM Sécurité Informatique"
+            }
+        };
+
+        function changeLanguage(lang) {
+            const translation = translations[lang];
+            document.getElementById('profile-name').innerText = translation.profileName;
+            document.getElementById('add-to-contacts').innerText = translation.addToContacts;
+            document.getElementById('phone-label').innerText = translation.phoneLabel;
+            document.getElementById('alt-phone-label').innerText = translation.altPhoneLabel;
+            document.getElementById('email-label').innerText = translation.emailLabel;
+            document.getElementById('company-label').innerText = translation.companyLabel;
+            document.getElementById('company-name').innerText = translation.companyName;
+        }
+
         function showSection(sectionId) {
-            // Hide all sections
-            document.querySelectorAll('.info-section').forEach(section => {
-                section.classList.remove('active');
-            });
-
-            // Remove 'active' class from all tabs
-            document.querySelectorAll('.tab').forEach(tab => {
-                tab.classList.remove('active');
-            });
-
-            // Show the selected section
+            document.querySelectorAll('.info-section').forEach(section => section.classList.remove('active'));
+            document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
             document.getElementById(sectionId).classList.add('active');
-
-            // Add 'active' class to the clicked tab
             document.querySelector(`.tab[onclick="showSection('${sectionId}')"]`).classList.add('active');
         }
     </script>
