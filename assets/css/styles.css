@@ -1,0 +1,188 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #6B93D6;
+    margin: 0;
+    position: relative;
+}
+
+.language-selector {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+}
+
+.language-selector img {
+    margin: 10px;
+    cursor: pointer;
+    background: transparent;
+    
+}
+
+.language-selector img:hover {
+    
+    background: transparent;
+}
+
+.profile-card {
+    width: 320px;
+    background-color: #f7f9fb;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-header {
+    background-color: #4579C5;
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+.profile-picture {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.add-to-contacts {
+    padding: 6px 12px;
+    font-size: 14px;
+    background-color: white;
+    color: #4579C5;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.add-to-contacts:hover {
+    background-color: #dbe3f1;
+}
+
+.tabs {
+    display: flex;
+    justify-content: space-around;
+    background-color: #f1f1f1;
+    padding: 10px 0;
+}
+
+.tab {
+    font-size: 14px;
+    color: #4579C5;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+.active{
+    font-weight: bolder;;
+}
+.tab.active {
+    color: black;
+    border-bottom: 2px solid #4579C5;
+}
+
+.info-section {
+    padding: 15px;
+    display: none;
+}
+
+.info-section.active {
+    display: block;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.icon {
+    font-size: 18px;
+    margin-right: 10px;
+    color: #4579C5;
+}
+
+.info-item span {
+    font-size: 14px;
+    color: #333;
+    flex: 1;
+}
+
+.info-item a, .info-item p {
+    font-size: 14px;
+    color: #4579C5;
+    text-decoration: none;
+}
+
+.info-item a:hover {
+    text-decoration: underline;
+}
+
+.social-icon {
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    border-radius: 50%;
+    transition: transform 0.2s;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+}
+
+#socials {
+    text-align: center;
+}
+
+.language-selector {
+    position: relative;
+    display: inline-block;
+}
+
+.selected-language {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.selected-language img {
+    height: 50px;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    Box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown img {
+    display: block;
+    width: auto;
+    height: 50px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.dropdown img:hover {
+    transform: scale(1.4);
+}
